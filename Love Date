@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Special Question ❤️</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#ffe6f0;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+text-align:center;
+}
+
+.box{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 15px rgba(0,0,0,0.2);
+width:90%;
+max-width:500px;
+}
+
+button{
+padding:10px 20px;
+margin:10px;
+font-size:16px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+background:#ff4d88;
+color:white;
+}
+
+input,textarea,select{
+width:90%;
+padding:10px;
+margin-top:10px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.page{
+display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box page" id="p1" style="display:block">
+<h2>❤️ Can I ask you something?</h2>
+
+<button onclick="show('p2')">Sure</button>
+<button onclick="show('p1a')">Later</button>
+</div>
+
+<div class="box page" id="p1a">
+<h2>No... It's important ❤️</h2>
+
+<p>You can only click OK 😊</p>
+
+<button onclick="show('p2')">OK</button>
+</div>
+
+<div class="box page" id="p2">
+<h2>Shall we go on a date? ❤️</h2>
+
+<button onclick="show('p3')">OK Sure</button>
+
+<button onclick="show('p2a')">No Way</button>
+</div>
+
+<div class="box page" id="p2a">
+<h2>Again wrong answer 😜</h2>
+
+<p>You can only click OK Sure ❤️</p>
+
+<button onclick="show('p3')">OK Sure</button>
+</div>
+
+<div class="box page" id="p3">
+
+<h2>Select a Date ❤️</h2>
+
+<p>You can choose only one of these dates:</p>
+
+<select id="date">
+<option>23/11/2026</option>
+<option>24/11/2026</option>
+<option>25/11/2026</option>
+</select>
+
+<br><br>
+
+<button onclick="show('p4')">Next</button>
+
+</div>
+
+<div class="box page" id="p4">
+
+<h2>Which cafe shall we go to? ☕❤️</h2>
+
+<input type="text" id="cafe" placeholder="Type your favourite cafe">
+
+<br><br>
+
+<button onclick="show('p5')">Next</button>
+
+</div>
+
+<div class="box page" id="p5">
+
+<h2>Is there anything to say? ❤️</h2>
+
+<textarea id="message" rows="5"></textarea>
+
+<br><br>
+
+<button onclick="submitForm()">Submit</button>
+
+</div>
+
+<div class="box page" id="p6">
+
+<h2>❤️ Thank You ❤️</h2>
+
+<p>
+No matter what happens, I am grateful for every moment spent with you.
+Life feels brighter with your smile, your presence and your conversations.
+
+Every memory we create becomes a beautiful story worth remembering.
+
+Looking forward to spending more time together and creating wonderful moments.
+
+You are special in ways words cannot fully describe ❤️
+</p>
+
+<h3>- Sukesh</h3>
+
+</div>
+
+<script>
+
+function show(id){
+
+document.querySelectorAll('.page').forEach(
+p=>p.style.display='none'
+);
+
+document.getElementById(id).style.display='block';
+
+}
+
+function submitForm(){
+
+const date=document.getElementById('date').value;
+const cafe=document.getElementById('cafe').value;
+const message=document.getElementById('message').value;
+
+console.log(date,cafe,message);
+
+/*
+To receive responses,
+replace this link with your Google Form URL.
+*/
+
+window.open(
+"YOUR_GOOGLE_FORM_LINK",
+"_blank"
+);
+
+show('p6');
+
+}
+
+</script>
+
+</body>
+</html>
